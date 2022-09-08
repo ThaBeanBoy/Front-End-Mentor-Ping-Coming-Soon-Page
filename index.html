@@ -1,34 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Ping coming soon page</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Ping coming soon page</title>
 
-  We are launching soon!
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600;700&display=swap');
 
-  Subscribe and get notified
+      :root {
+        --Typeface: 'Libre Franklin', sans-serif;
 
-  Notify Me
+        /* Primary */
+        --Colour-Blue: hsl(223, 87%, 63%);
+        /* Secondary */
+        --Colour-Pale-Blue: hsl(223, 100%, 88%);
+        --Colour-Light-Red: hsl(354, 100%, 66%);
+        /* Neutral */
+        --Colour-Gray: hsl(0, 0%, 59%);
+        --Colour-Very-Dark-Blue: hsl(209, 33%, 12%);
 
-  &copy; Copyright Ping. All rights reserved.
+        --max-width: 640px;
+        --border-radius-of-input-section: 32px;
+        --Input-padding: 20px;
 
-  <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
-    </p>
-  </footer>
-</body>
+        --Trasnition-time: 0.25s;
+      }
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--Typeface);
+        color: var(--Colour-Very-Dark-Blue);
+        font-weight: 300;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 100vw;
+        min-height: 100vh;
+      }
+
+      #logo {
+        width: 86px;
+        margin-top: 86px;
+        margin-bottom: 56px;
+      }
+
+      h1 {
+        font-weight: 300;
+        color: var(--Colour-Gray);
+        margin-bottom: 24px;
+      }
+
+      h1 b {
+        font-weight: 700;
+        color: var(--Colour-Very-Dark-Blue);
+      }
+
+      .message {
+        margin-bottom: 40px;
+      }
+
+      .input-section {
+        position: relative;
+        max-width: var(--max-width);
+        width: 100%;
+
+        display: flex;
+        margin-bottom: 96px;
+      }
+
+      .input-section .input-box {
+        flex: 1;
+        margin-right: 16px;
+      }
+
+      .input-section input {
+        padding: var(--Input-padding);
+        width: 100%;
+        border-radius: var(--border-radius-of-input-section);
+        font-family: var(--Typeface);
+        border: 1px solid var(--Colour-Pale-Blue);
+        color: var(--Colour-Very-Dark-Blue);
+        outline: none;
+      }
+
+      .input-section input:placeholder-shown {
+        color: var(--Colour-Pale-Blue);
+      }
+
+      .input-section input:invalid {
+        border-color: var(--Colour-Light-Red);
+      }
+
+      .input-section button {
+        padding: 20px 64px;
+        border-radius: var(--border-radius-of-input-section);
+        background-color: var(--Colour-Blue);
+        color: #fff;
+        border: none;
+        letter-spacing: 1px;
+        transition: var(--Trasnition-time);
+        box-shadow: 0px 8px 16px var(--Colour-Pale-Blue);
+      }
+
+      .input-section button:hover {
+        /* background-color: var(--Colour-Pale-Blue); */
+        filter: brightness(1.25);
+      }
+
+      .input-section .input-err {
+        display: none;
+        position: absolute;
+        transform: translate(var(--Input-padding), 8px);
+        font-size: 12px;
+        color: var(--Colour-Light-Red);
+      }
+
+      input:invalid + .input-err {
+        display: block;
+      }
+
+      #illustration-dashboard {
+        max-width: var(--max-width);
+        margin-bottom: 72px;
+      }
+
+      .social-icons {
+        display: flex;
+        margin-bottom: 28px;
+      }
+
+      .social-icons i {
+        cursor: pointer;
+
+        color: var(--Colour-Blue);
+
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: 1px solid var(--Colour-Pale-Blue);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        transition: var(--Trasnition-time);
+      }
+
+      .social-icons i:not(.social-icons i:first-child) {
+        margin-left: 16px;
+      }
+
+      .social-icons i:hover {
+        background-color: var(--Colour-Blue);
+        color: #fff;
+        border-color: var(--Colour-Blue);
+      }
+
+      .attribution {
+        color: var(--Colour-Gray);
+        font-size: 11px;
+        text-align: center;
+        margin-bottom: 16px;
+      }
+      .attribution a {
+        color: var(--Colour-Blue);
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <img id="logo" src="./images/logo.svg" alt="logo" />
+    <h1>We are launching <b>soon!</b></h1>
+    <p class="message">Subscribe and get notified</p>
+    <form class="input-section">
+      <div class="input-box">
+        <input type="email" placeholder="Your email address" />
+        <p class="input-err">Please provide a valid email address</p>
+      </div>
+      <button class="upload-email">Notify Me</button>
+    </form>
+    <img
+      id="illustration-dashboard"
+      src="./images/illustration-dashboard.png"
+      alt="illustration-dashboard"
+    />
+    <div class="social-icons">
+      <i class="fa-brands fa-facebook-f"></i>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-instagram"></i>
+    </div>
+
+    <footer>
+      <p class="attribution">
+        &copy; Copyright Ping. All rights reserved. Challenge by <br />
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Your Name Here</a>.
+      </p>
+    </footer>
+  </body>
 </html>
