@@ -53,6 +53,7 @@
 
         width: 100vw;
         min-height: 100vh;
+        padding: 0 16px;
       }
 
       #logo {
@@ -65,6 +66,7 @@
         font-weight: 300;
         color: var(--Colour-Gray);
         margin-bottom: 24px;
+        text-align: center;
       }
 
       h1 b {
@@ -74,6 +76,7 @@
 
       .message {
         margin-bottom: 40px;
+        text-align: center;
       }
 
       .input-section {
@@ -139,6 +142,7 @@
       #illustration-dashboard {
         max-width: var(--max-width);
         margin-bottom: 72px;
+        width: 100%;
       }
 
       .social-icons {
@@ -171,6 +175,21 @@
         background-color: var(--Colour-Blue);
         color: #fff;
         border-color: var(--Colour-Blue);
+      }
+
+      @media screen and (max-width: 500px) {
+        .input-section {
+          flex-direction: column;
+        }
+
+        .input-section .input-box {
+          margin-right: 0px;
+          margin-bottom: 20px;
+        }
+
+        .input-err {
+          position: static !important;
+        }
       }
 
       .attribution {
