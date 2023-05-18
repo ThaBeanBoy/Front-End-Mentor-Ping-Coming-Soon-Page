@@ -6,6 +6,7 @@ This is a solution to the [Ping coming soon page challenge on Frontend Mentor](h
 
 - [Frontend Mentor - Ping coming soon page solution](#frontend-mentor---ping-coming-soon-page-solution)
   - [Table of contents](#table-of-contents)
+  - [Youtube video](#youtube-video)
   - [Overview](#overview)
     - [The challenge](#the-challenge)
     - [Screenshot](#screenshot)
@@ -15,6 +16,10 @@ This is a solution to the [Ping coming soon page challenge on Frontend Mentor](h
     - [What I learned](#what-i-learned)
     - [Useful resources](#useful-resources)
   - [Author](#author)
+
+## Youtube video
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/sap0MJCC1oA/0.jpg)](https://www.youtube.com/watch?v=sap0MJCC1oA)
 
 ## Overview
 
